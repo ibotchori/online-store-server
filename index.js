@@ -3,9 +3,22 @@ const express = require('express') // import Express
 
 const sequelize = require ('./db') // import object from db.js
 
+const models = require('./models/models') // import models from models.js
+
+const cors = require('cors') // import cors function to send requests from browser
+
 const PORT = process.env.PORT || 5000 // <-- import port from .env file, if don't declare the port, set it to 5000 by default
 
 const app = express() // create object to run express function
+
+app.use(cors()) // give app cors function
+app.use(express.json()) // that app can parse json
+
+
+/* make get request to test server response */
+app.get('/', (req, res) => { // <-- 1 parameter: '/' = URL, 2 parameter: callback which has 2 parammeters request & response
+    res.status(200).json({message: "WORKING!!!"}) // <-- server response: 200 =  status code, message = body
+})
 
 
 const start = async () => {
