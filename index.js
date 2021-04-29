@@ -11,8 +11,12 @@ const PORT = process.env.PORT || 5000 // <-- import port from .env file, if don'
 
 const app = express() // create object to run express function
 
+const router = require('./routes/index') // import Basic Router
+
 app.use(cors()) // give app cors function
 app.use(express.json()) // that app can parse json
+
+app.use('/api', router) // 1 parameter URL, 2 parameter Basic router
 
 
 /* make get request to test server response */
