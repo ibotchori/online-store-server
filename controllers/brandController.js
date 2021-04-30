@@ -6,7 +6,7 @@ class BrandController { // create Class to group all this functions
         
     }
     async getAll(req, res) { // function to get all brands
-        res.json('brand')
+        // test to check server response: res.json('brand')
     }
    
 }

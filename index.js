@@ -13,10 +13,20 @@ const app = express() // create object to run express function
 
 const router = require('./routes/index') // import Basic Router
 
+const errorHandler = require('./middleWare/ErrorHandlingMidleware') // impoert middleware
+
+
+
+
 app.use(cors()) // give app cors function
 app.use(express.json()) // that app can parse json
 
 app.use('/api', router) // 1 parameter URL, 2 parameter Basic router
+
+app.use(errorHandler) // middleware hwich working with errors, must be declare in the last
+
+
+
 
 
 /* make get request to test server response */

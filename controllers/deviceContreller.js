@@ -6,7 +6,7 @@ class DeviceController { // create Class to group all this functions
         
     }
     async getAll(req, res) { // function to get all devices
-        res.json('device')
+        // test to check server response: res.json('device')
     }
     async getOne(req, res) { // function to get one device
         

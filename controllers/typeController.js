@@ -6,7 +6,7 @@ class TypeController { // create Class to group all this functions
 
     }
     async getAll(req, res) { // function to get all types
-        res.json('type')
+        // test to check server response: res.json('type')
     }
    
 }
