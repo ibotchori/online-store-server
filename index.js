@@ -5,7 +5,9 @@ const sequelize = require ('./db') // import object from db.js
 
 const models = require('./models/models') // import models from models.js
 
-const cors = require('cors') // import cors function to send requests from browser
+const cors = require('express-fileUpload') // import cors function to send requests from browser
+
+const fileUpload = require('cors') // import filUpload function to upload files
 
 const PORT = process.env.PORT || 5000 // <-- import port from .env file, if don't declare the port, set it to 5000 by default
 
@@ -20,6 +22,7 @@ const errorHandler = require('./middleWare/ErrorHandlingMidleware') // impoert m
 
 app.use(cors()) // give app cors function
 app.use(express.json()) // that app can parse json
+app.use(fileUpload({})) // declare fileUpload with emtpy object parameter
 
 app.use('/api', router) // 1 parameter URL, 2 parameter Basic router
 
