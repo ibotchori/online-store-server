@@ -17,11 +17,14 @@ const router = require('./routes/index') // import Basic Router
 
 const errorHandler = require('./middleWare/ErrorHandlingMidleware') // impoert middleware
 
+const path = require('path') // import path module, from node.js
+
 
 
 
 app.use(cors()) // give app cors function
 app.use(express.json()) // that app can parse json
+app.use(express.static(path.resolve(__dirname, 'static' ))) // tell to server that, file from static folder must be distrubute as static. than we can archve it this file
 app.use(fileUpload({})) // declare fileUpload with emtpy object parameter
 
 app.use('/api', router) // 1 parameter URL, 2 parameter Basic router
