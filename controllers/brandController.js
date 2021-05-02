@@ -6,7 +6,7 @@ const ApiError = require('../error/ApiError') // import ApiError
 class BrandController { // create Class to group all this functions
 
     async create(req, res) { // function to create brand
-        const {name} = req.body // get type's name from  request body (POST request)
+        const {name} = req.body // get brands's name from  request body (POST request)
         const brand = await Brand.create({name}) // create this brand 
         return res.json(brand) // return brand to client
     }
