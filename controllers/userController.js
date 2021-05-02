@@ -20,7 +20,7 @@ const generateJwt = (id, email, role) => { // generate JSON web token
 
 class UserController { // create Class to group all this functions
 
-    async registarion(req, res, next) { // function to user registration
+    async registration(req, res, next) { // function to user registration
         const {email, password, role} = req.body // get data from request body. Role uses tu create separately Administrator and separately User
         if(!email || !password){ //if email and password is empty
             return next(ApiError.badRequest('Incorrect Email or Password')) // return error to client

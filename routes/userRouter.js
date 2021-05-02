@@ -8,7 +8,7 @@ const userController = require('../controllers/userController') // import user c
 
 
 
-router.post('/registration', userController.registarion) // route to user registration, second parameter object with specific function from user controller
+router.post('/registration', userController.registration) // route to user registration, second parameter object with specific function from user controller
 router.post('/login', userController.login) // route to user uthorization, second parameter object with specific function from user controller
 router.get('/auth', userController.check) // route to check user authorization, second parameter object with specific function from user controller
 
