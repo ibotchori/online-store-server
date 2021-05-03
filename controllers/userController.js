@@ -64,7 +64,9 @@ class UserController { // create Class to group all this functions
        
     }
     async check(req, res, next) { //  function to check user authorization
-   
+        /* generete token and return it to client */
+        const token = generateJwt(req.user.id, req.user.email, req.user.role)
+        return res.json({token})
         
     }
 }
